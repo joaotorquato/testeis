@@ -24,6 +24,7 @@ group :development, :test do
   gem 'poltergeist'
   gem 'database_cleaner'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'pry-byebug'
