@@ -1,0 +1,65 @@
+
+section.section-title
+  .row
+    .col-md-offset-2.col-md-8.col-sm-12.text-center
+      .page-header
+        h1 Students Register
+      p This is a app to help you register all your students
+
+.space style="height:20px"
+
+.row
+  .section.students-list
+    .col-md-offset-2.col-md-4.col-sm-12
+      .panel.panel-default
+        .panel-heading Students
+        .panel-body
+          - if @students.empty?
+            h4.text-center You haven't registered any students yet.
+          - else
+            table.table.table-striped.task-table
+              thead
+                th Name
+                th Register Number
+                th Actions
+              tbody
+                = render @students
+
+          = link_to 'New student', new_student_path, class: 'btn btn-default pull-right'
+
+  .section.courses-list
+    .col-md-4.col-sm-12
+      .panel.panel-default
+        .panel-heading Courses
+        .panel-body
+          - if @courses.empty?
+            h4.text-center You haven't registered any courses yet.
+          - else
+            table.table.table-striped.task-table
+              thead
+                th Name
+                th Actions
+              tbody
+                = render @courses
+
+          = link_to 'New course', new_course_path, class: 'btn btn-default pull-right'
+
+.row
+  .section.classrooms-list
+    .col-md-offset-2.col-md-8.col-sm-12
+      .panel.panel-default
+        .panel-heading Classrooms
+        .panel-body
+          - if @classrooms.empty?
+            h4.text-center You haven't enrolled any students yet.
+          - else
+            table.table.table-striped.task-table
+              thead
+                th Student
+                th Course
+                th Entry at
+                th Actions
+              tbody
+                = render @classrooms
+
+          = link_to 'New enrollment', new_classroom_path, class: 'btn btn-default pull-right'

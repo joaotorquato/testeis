@@ -1,0 +1,8 @@
+- flash.each do |key, value|
+  .row
+    .col-md-offset-2.col-md-8.col-sm-12.text-center
+      div class="alert alert-#{bootstrap_class_for_message(key)}"
+        a.close href="#" data-dismiss="alert" ×
+        ul
+          li
+            = value

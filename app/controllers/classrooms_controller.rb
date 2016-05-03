@@ -1,6 +1,13 @@
 class ClassroomsController < ApplicationController
   respond_to :html
 
+  def index
+    @students = Student.all_active
+    @courses = Course.all_active
+    @classrooms = Classroom.all
+    respond_with @students, @courses, @classrooms
+  end
+
   def new
     @classroom = Classroom.new
     respond_with @classroom
@@ -8,12 +15,7 @@ class ClassroomsController < ApplicationController
 
   def create
     @classroom = Classroom.create(classroom_params)
-    respond_with @classroom
-  end
-
-  def show
-    @classroom = Classroom.find(params[:id])
-    respond_with @classroom
+    respond_with @classroom, location: -> { root_path }
   end
 
   private

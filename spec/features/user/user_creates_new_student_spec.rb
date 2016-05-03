@@ -11,8 +11,10 @@ feature 'User creates a new student' do
 
     click_on 'Create'
 
-    expect(page).to have_content student.name
-    expect(page).to have_content student.register_number
+    within('.students-list') do
+      expect(page).to have_content student.name
+      expect(page).to have_content student.register_number
+    end
   end
 
   scenario 'unsuccessfuly', js: true do

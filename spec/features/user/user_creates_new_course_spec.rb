@@ -11,8 +11,9 @@ feature 'User creates a new course' do
 
     click_on 'Create'
 
-    expect(page).to have_content course.name
-    expect(page).to have_content course.description
+    within('.courses-list') do
+      expect(page).to have_content course.name
+    end
   end
 
   scenario 'unsuccessfuly', js: true do

@@ -4,6 +4,8 @@ class Course < ActiveRecord::Base
   has_many :students, through: :classrooms
   before_create :set_status
 
+  scope :all_active, -> { where(status: CourseStatus::ACTIVE) }
+
   def set_status
     self.status = CourseStatus::ACTIVE
   end

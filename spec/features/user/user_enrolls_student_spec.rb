@@ -15,9 +15,11 @@ feature 'User enrolls a student' do
 
     click_on 'Create'
 
-    expect(page).to have_content student.name
-    expect(page).to have_content course.name
-    expect(page).to have_content '01/05/2016'
+    within('.classrooms-list') do
+      expect(page).to have_content student.name
+      expect(page).to have_content course.name
+      expect(page).to have_content '01/05/2016'
+    end
   end
 
   scenario 'unsuccessfuly', js: true do

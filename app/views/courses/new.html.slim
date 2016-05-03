@@ -1,4 +1,11 @@
-= simple_form_for @course, validate: true do |f|
-  = f.input :name
-  = f.input :description
-  = f.submit 'Create'
+.row
+  .col-md-offset-2.col-md-8.col-sm-12
+    .page-header.text-center
+      h1 Register a new course
+    .panel.panel-default
+      .panel-heading Course
+      .panel-body
+        = simple_form_for @course, validate: true do |f|
+          = f.input :name, input_html: {class:'form-control'}, wrapper_html: { class: 'form-group' }
+          = f.input :description, input_html: {class:'form-control'}, wrapper_html: { class: 'form-group' }
+          = f.submit 'Create', class: 'btn btn-primary'

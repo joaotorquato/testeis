@@ -8,12 +8,7 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.create(course_params)
-    respond_with @course
-  end
-
-  def show
-    @course = Course.find(params[:id])
-    respond_with @course
+    respond_with @course, location: -> { root_path }
   end
 
   private
