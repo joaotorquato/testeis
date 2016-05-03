@@ -1,0 +1,5 @@
+= simple_form_for @classroom, validate: true do |f|
+  = f.association :student
+  = f.association :course
+  = f.input :entry_at, as: :date
+  = f.submit 'Create'
