@@ -1,19 +1,19 @@
 class StudentsController < ApplicationController
+  respond_to :html
+
   def new
     @student = Student.new
+    respond_with @student
   end
 
   def create
-    @student = Student.new(student_params)
-    if @student.save
-      redirect_to @student
-    else
-      render :new
-    end
+    @student = Student.create(student_params)
+    respond_with @student
   end
 
   def show
     @student = Student.find(params[:id])
+    respond_with @student
   end
 
   private

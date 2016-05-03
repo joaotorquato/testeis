@@ -1,19 +1,19 @@
 class CoursesController < ApplicationController
+  respond_to :html
+
   def new
     @course = Course.new
+    respond_with @course
   end
 
   def create
-    @course = Course.new(course_params)
-    if @course.save
-      redirect_to @course
-    else
-      render :new
-    end
+    @course = Course.create(course_params)
+    respond_with @course
   end
 
   def show
     @course = Course.find(params[:id])
+    respond_with @course
   end
 
   private

@@ -1,20 +1,19 @@
 class ClassroomsController < ApplicationController
+  respond_to :html
+
   def new
     @classroom = Classroom.new
+    respond_with @classroom
   end
 
   def create
-    @classroom = Classroom.new(classroom_params)
-    if @classroom.save
-      flash[:success] = 'Student was enrolled successfuly'
-      redirect_to @classroom
-    else
-      render :new
-    end
+    @classroom = Classroom.create(classroom_params)
+    respond_with @classroom
   end
 
   def show
     @classroom = Classroom.find(params[:id])
+    respond_with @classroom
   end
 
   private

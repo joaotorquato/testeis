@@ -13,7 +13,7 @@ describe ClassroomsController do
         post :create, classroom: classroom_atributes
 
         expect(response).to redirect_to(classroom_path(Classroom.last))
-        expect(flash[:success])
+        expect(flash[:notice])
           .to match(/^Student was enrolled successfuly/)
       end
     end
