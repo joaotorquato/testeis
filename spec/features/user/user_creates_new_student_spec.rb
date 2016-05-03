@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User creates a new student' do
   scenario 'successfuly' do
-    student = create(:student)
+    student = build(:student)
 
     visit new_student_path
 
