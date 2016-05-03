@@ -1,11 +1,11 @@
 .row
   .col-md-offset-2.col-md-8.col-sm-12
     .page-header.text-center
-      h1 Register a new student
+      h1 =t 'new_path', entity: "#{t 'activerecord.models.student'}"
     .panel.panel-default
-      .panel-heading Student
+      .panel-heading =t 'activerecord.models.student'
       .panel-body
         = simple_form_for @student, validate: true do |f|
           = f.input :name, input_html: {class:'form-control'}, wrapper_html: { class: 'form-group' }
           = f.input :register_number, input_html: {class:'form-control'}, wrapper_html: { class: 'form-group' }
-          = f.submit 'Create', class: 'btn btn-primary'
+          = f.submit class: 'btn btn-primary'

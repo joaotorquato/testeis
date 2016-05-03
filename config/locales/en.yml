@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  home_h1: 'Students Register'
+  home_p: 'This is a app to help you register all your students!'
+  empty_list: "You haven't registered any %{message} yet."
+  new_path: "new %{entity}"
+  delete_path: "Delete %{entity}"

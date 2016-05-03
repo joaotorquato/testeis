@@ -3,8 +3,8 @@ section.section-title
   .row
     .col-md-offset-2.col-md-8.col-sm-12.text-center
       .page-header
-        h1 Students Register
-      p This is a app to help you register all your students
+        h1 =t 'home_h1'
+      p =t 'home_p'
 
 .space style="height:20px"
 
@@ -12,54 +12,54 @@ section.section-title
   .section.students-list
     .col-md-offset-2.col-md-4.col-sm-12
       .panel.panel-default
-        .panel-heading Students
+        .panel-heading =t 'activerecord.models.student'
         .panel-body
           - if @students.empty?
-            h4.text-center You haven't registered any students yet.
+            h4.text-center =t 'empty_list', message: "#{t 'activerecord.models.student'}"
           - else
             table.table.table-striped.task-table
               thead
-                th Name
-                th Register Number
-                th Actions
+                th =t 'activerecord.attributes.student.name'
+                th =t 'activerecord.attributes.student.register_number'
+                th =t 'actions'
               tbody
                 = render @students
 
-          = link_to 'New student', new_student_path, class: 'btn btn-default pull-right'
+          = link_to "#{t 'new_path', entity: "#{t 'activerecord.models.student'}"}", new_student_path, class: 'btn btn-default pull-right'
 
   .section.courses-list
     .col-md-4.col-sm-12
       .panel.panel-default
-        .panel-heading Courses
+        .panel-heading =t 'activerecord.models.course'
         .panel-body
           - if @courses.empty?
-            h4.text-center You haven't registered any courses yet.
+            h4.text-center =t 'empty_list', message: "#{t 'activerecord.models.course'}"
           - else
             table.table.table-striped.task-table
               thead
-                th Name
-                th Actions
+                th =t 'activerecord.attributes.course.name'
+                th =t 'actions'
               tbody
                 = render @courses
 
-          = link_to 'New course', new_course_path, class: 'btn btn-default pull-right'
+          = link_to "#{t 'new_path', entity: "#{t 'activerecord.models.course'}"}", new_course_path, class: 'btn btn-default pull-right'
 
 .row
   .section.classrooms-list
     .col-md-offset-2.col-md-8.col-sm-12
       .panel.panel-default
-        .panel-heading Classrooms
+        .panel-heading =t 'activerecord.models.classroom'
         .panel-body
           - if @classrooms.empty?
-            h4.text-center You haven't enrolled any students yet.
+            h4.text-center =t 'empty_list', message: "#{t 'activerecord.models.classroom'}"
           - else
             table.table.table-striped.task-table
               thead
-                th Student
-                th Course
-                th Entry at
-                th Actions
+                th =t 'activerecord.attributes.classroom.student'
+                th =t 'activerecord.attributes.classroom.course'
+                th =t 'activerecord.attributes.classroom.entry_at'
+                th =t 'actions'
               tbody
                 = render @classrooms
 
-          = link_to 'New enrollment', new_classroom_path, class: 'btn btn-default pull-right'
+          = link_to "#{t 'new_path', entity: "#{t 'activerecord.models.classroom'}"}", new_classroom_path, class: 'btn btn-default pull-right'

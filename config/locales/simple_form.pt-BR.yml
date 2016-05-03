@@ -1,0 +1,20 @@
+pt-BR:
+  simple_form:
+    "yes": 'Sim'
+    "no": 'Não'
+    required:
+      text: 'obrigatório'
+      mark: '*'
+    error_notification:
+      default_message: "Alguns erros foram encontrados, por favor verifique:"
+    labels:
+      student:
+        name: 'Nome'
+        register_number: 'Número de registro'
+      course:
+        name: 'Nome'
+        description: 'Descrição'
+      classroom:
+        student: 'Estudante'
+        course: 'Curso'
+        entry_at: 'Data de admissão'

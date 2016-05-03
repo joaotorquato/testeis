@@ -2,4 +2,4 @@ tr
   td = student.name
   td = student.register_number
   td
-    a.btn.btn-danger href="" disabled="disabled" delete student
+    a.btn.btn-danger href="" disabled="disabled" =t 'delete_path', entity: "#{t 'activerecord.models.student'}"

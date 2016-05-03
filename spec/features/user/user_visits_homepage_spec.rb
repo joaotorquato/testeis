@@ -15,21 +15,21 @@ feature 'User visits the homepage' do
         expect(page).to have_content student.name
         expect(page).to have_content student.register_number
       end
-      expect(page).to have_link 'New student'
+      expect(page).to have_link 'Novo(a) Estudante'
     end
 
     within('.courses-list') do
       courses.each do |course|
         expect(page).to have_content course.name
       end
-      expect(page).to have_link 'New course'
+      expect(page).to have_link 'Novo(a) Curso'
     end
 
     within('.classrooms-list') do
       expect(page). to have_content classroom.student.name
       expect(page). to have_content classroom.course.name
-      expect(page). to have_content classroom.entry_at.strftime("%d/%m/%Y")
-      expect(page).to have_link 'New enrollment'
+      expect(page). to have_content classroom.entry_at.strftime('%d/%m/%Y')
+      expect(page).to have_link 'Novo(a) Matrícula'
     end
   end
 end
